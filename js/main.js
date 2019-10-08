@@ -14,9 +14,30 @@ $(document).ready(function() {
 		$(this).parent().toggleClass('changebg');
 	});
 
-	let categoryListItem = $('.category-list__item a').text();
+	let categoryListItem = $('.category-list__item a');
+	let catIndex = 1;
 
-	console.log(categoryListItem);
+	categoryListItem.each(function(){
+		$(this).attr('data-key', catIndex);
+		catIndex++;
 
+		$(this).on('click', function(){
+			menu.removeClass('menu-active');
+			$('.header__burger').removeClass('header__burger-active');
+		})
+	});
+
+	$('.get_content').click(function(e) {
+		e.preventDefault();
+	    var pageName = $(this).data('page');
+	    // ajax-запрос
+	    $.ajax({
+	        url: pageName,
+	        cache: false,
+	        success: function(html){
+	            $(".content").html(html);
+	        }
+	    });
+	});
 
 });
