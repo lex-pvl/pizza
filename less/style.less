@@ -58,7 +58,7 @@ a, a:hover, a:focus {
 	justify-content: space-between;
 	align-items: center;
 	box-shadow: 0px 0px 10px #000;
-	position: relative;
+	position: fixed;
 	z-index: 2;
 	&__burger {
 		display: block;
@@ -87,7 +87,7 @@ a, a:hover, a:focus {
 				position: absolute;
 				top: 50%; margin-top: -2px;
 				left: 50%; margin-left: -13px;
-  				transform: translateY(-7px);
+				transform: translateY(-7px);
 			}
 			&::after {
 				content: '';
@@ -99,7 +99,7 @@ a, a:hover, a:focus {
 				position: absolute;
 				top: 50%; margin-top: -2px;
 				left: 50%; margin-left: -13px;
-  				transform: translateY(7px);
+				transform: translateY(7px);
 			}
 		}
 		&-active {
@@ -121,17 +121,17 @@ a, a:hover, a:focus {
 
 .menu {
 	position: fixed;
-    width: 500px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    top: 50px;
-    bottom: 0;
-    left: 0;
-    background-color: #282828;
-    box-shadow: 0px 0px 10px #282828;
-    color: #f0f0f0;
-    z-index: 1;
-    transform: translateX(-100%);
+	width: 500px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	background-color: #282828;
+	box-shadow: 0px 0px 10px #282828;
+	color: #f0f0f0;
+	z-index: 1;
+	transform: translateX(-100%);
 	transition: transform .5s;
 	padding: 25px 0;
 
@@ -180,12 +180,21 @@ a, a:hover, a:focus {
 		&-list {
 			padding-bottom: 25px;
 			&__item {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
 				padding: 10px 0;
 				border-bottom: 1px solid #484848;
 				a {
 					display: block;
 					font-size: 20px;
 					color: #fff;
+				}
+				&:hover a {
+					color: #ff6900;
+				}
+				&:hover i {
+					color: #ff6900;
 				}
 			}
 		}
@@ -197,10 +206,19 @@ a, a:hover, a:focus {
 	margin: 0 auto;
 	padding: 15px;
 	position: relative;
+	top: 50px;
 	font-size: 16px;
 	h3 {
 		font-size: 40px;
 		margin-bottom: 25px;
+	}
+	h4 {
+		font-size: 30px;
+		margin-bottom: 25px;
+	}
+	span {
+		display: block;
+		margin-top: 15px;
 	}
 	ol {
 		list-style: decimal;
@@ -241,6 +259,7 @@ a, a:hover, a:focus {
 		padding: 10px 15px;
 		max-width: 50%;
 		font-weight: 700;
+		text-align: left;
 	}
 	td {
 		border: 1px solid #484848;
@@ -294,6 +313,12 @@ a, a:hover, a:focus {
 		margin-top: 15px;
 		border-radius: 5px;
 	}
+	.succ {
+		border: 1px solid green;
+		padding: 10px 15px;
+		margin-top: 15px;
+		border-radius: 5px;
+	}
 	.items {
 		display: flex;
 		margin-left: 15px;
@@ -310,6 +335,86 @@ a, a:hover, a:focus {
 			&-text {
 				padding: 15px;
 			}
+		}
+	}
+
+	.just {
+		margin-top: 15px;
+	}
+
+	.scheme {
+		margin-top: 30px;
+		margin-left: 15px;
+		h4 {
+			font-size: 30px;
+			font-weight: 600;
+		}
+		p {
+			font-size: 20px;
+			margin-top: 15px;
+		}
+		&__content {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: 15px;
+		}
+		&-item {
+			max-width: 48%;
+			border: 1px solid #484848;
+			padding: 15px;
+			img {
+				max-width: 100%;
+			}
+			&-text {
+				margin-top: 15px;	
+				h5 {
+					font-size: 20px;
+					font-weight: 600;
+				}
+				p {
+					font-size: 16px;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+
+	.sposob {
+		padding: 10px 15px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		border: 1px solid #484848;
+		h5 {
+			font-size: 20px;
+			font-weight: 600;
+		}
+		&__content {
+			display: flex;
+			align-items: flex-start;
+			margin-top: 10px;
+			img {
+				width: 212px;
+				height: 212px;
+			}
+			div {
+				margin-left: 20px;
+				p {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	.photo {
+		border: 1px solid #484848;
+		max-width: 50%;
+		margin-top: 15px;
+		img {
+			max-width: 100%;
+		}
+		&-text {
+			padding: 10px 15px;
 		}
 	}
 }
